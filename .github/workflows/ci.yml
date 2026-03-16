@@ -1,20 +1,20 @@
 name: Node.js CI
 on:
  push:
-  branches: [ "main" ]
+ branches: [ "main" ]
  pull_request:
-  branches: [ "main" ]
+ branches: [ "main" ]
 jobs:
  build-and-test:
   runs-on: ubuntu-latest
   steps:
   - uses: actions/checkout@v3
   - name: Use Node.js
-  uses: actions/setup-node@v3
-  with:
-   node-version: '18.x'
+    uses: actions/setup-node@v3
+    with:
+     node-version: '18.x'
   - run: npm install
-  - run: echo index.js
+  - run: echo "Tests would run here..."
 deploy-docker:
  needs: build-and-test
  runs-on: ubuntu-latest
